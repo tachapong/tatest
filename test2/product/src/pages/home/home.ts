@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http';
 import { ListPage } from '../list/list';
+import { BuyPage } from '../buy/buy';
 
 @Component({
   selector: 'page-home',
@@ -31,6 +32,9 @@ export class HomePage {
           // ERROR: Do something
           console.log("fail")
         });
+  }
+  Buy(){
+    this.navCtrl.push(BuyPage)
   }
 
 }
