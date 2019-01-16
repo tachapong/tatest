@@ -12,22 +12,31 @@
   <H3>สั่งซื้อของ</H3>
   <ion-list>
     <ion-row>
-      <ion-col col-3 text-center>ชื่อรายการสินค้า</ion-col>
-      <ion-col col-3 text-center>ราคาสินค้า</ion-col>
-      <ion-col col-3 text-center>จำนวนสินค้า</ion-col>
-      <ion-col col-3 text-center>ราคารวม</ion-col>
+      <ion-item col-3 text-center>ชื่อรายการสินค้า</ion-item>
+      <ion-item col-3 text-center>ราคาสินค้า</ion-item>
+      <ion-item col-3 text-center>จำนวนสินค้า</ion-item>
+      <ion-item col-3 text-center>ราคารวม</ion-item>
     </ion-row>
   </ion-list>
 
   <ion-list>
     <button ion-item *ngFor="let item of orders">
       <ion-row>
-        <ion-col col-3 text-center>{{item.product }} </ion-col>
-        <ion-col col-3 text-center>{{item.price}} </ion-col>
-        <ion-col col-3 text-center>{{item.amount}} </ion-col>
-        <ion-col col-3 text-center> {{item.sum}} </ion-col>
+        <ion-item col-3 text-center>{{item.product }} </ion-item>
+        <ion-item col-3 text-center>{{item.price}} </ion-item>
+        <ion-item col-3 text-center>{{item.amount}} </ion-item>
+        <ion-item col-3 text-center> {{item.sum}} </ion-item>
       </ion-row>
     </button>
   </ion-list>
+
+  <ion-item>
+    <ion-label fixed>ส่วนลด</ion-label>
+    <ion-input type="number" [(ngModel)]="Amount"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>ยอดที่ต้องจ่าย</ion-label>
+    <ion-input type="number" [(ngModel)]="Sum"></ion-input>
+  </ion-item>
 
 </ion-content>

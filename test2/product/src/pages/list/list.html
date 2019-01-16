@@ -12,19 +12,19 @@
   <ion-list>
 
     <ion-row>
-      <ion-col col-3 text-center>ชื่อรายการสินค้า</ion-col>
-      <ion-col col-3 text-center>ราคาสินค้า</ion-col>
-      <ion-col col-3 text-center>จำนวนสินค้า</ion-col>
-      <ion-col col-3 text-center>ราคารวม</ion-col>
+      <ion-item col-3 text-center>ชื่อรายการสินค้า</ion-item>
+      <ion-item col-3 text-center>ราคาสินค้า</ion-item>
+      <ion-item col-3 text-center>จำนวนสินค้า</ion-item>
+      <ion-item col-3 text-center>ราคารวม</ion-item>
     </ion-row>
   </ion-list>
   <ion-list>
     <button ion-item *ngFor="let item of orders">
       <ion-row>
-        <ion-col col-3 text-center>{{item.product }} </ion-col>
-        <ion-col col-3 text-center>{{item.price}} </ion-col>
-        <ion-col col-3 text-center>{{item.amount}} </ion-col>
-        <ion-col col-3 text-center> {{item.sum}} </ion-col>
+        <ion-item col-3 text-center>{{item.product }} </ion-item>
+        <ion-item col-3 text-center>{{item.price}} </ion-item>
+        <ion-item col-3 text-center>{{item.amount}} </ion-item>
+        <ion-item col-3 text-center> {{item.sum}} </ion-item>
       </ion-row>
     </button>
   </ion-list>
