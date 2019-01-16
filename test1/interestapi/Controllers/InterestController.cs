@@ -11,26 +11,38 @@ namespace interestapi.Controllers
     [ApiController]
     public class InterestController : ControllerBase
     {
-         private static List<refund> refunds = new List<refund>();
+        private static List<refund> refunds = new List<refund>();
         private static int Counter = 1;
+        private static int sumi = 0;
+
         [HttpPost]
         public void Post([FromBody] refund refund)
         {
-            var refundgroup = new refund
+            int summ = new logic().result(refund.Money);
+                summ = 0;
+            for (int i = 1; i <= refund.Year; i++)
             {
-                Year = refund.Year++,
-                Money= refund.Money,
-                Interest = 0,
-                Pay = 0,
-                // Price = order.Price,
-                // Sum = order.Amount * order.Price,
-                // Group = new logic().result(order.Amount * order.Price)
+                var refundgroup = new refund
+                {
+                    Year = Counter++,
+                    Money = refund.Money += summ,
+                    Interest = sumi += new logic().result(refund.Money += summ),
+                    Pay = refund.Money += (new logic().result(refund.Money)),
 
+                };
+                refunds.Add(refundgroup);
             };
-            refunds.Add(refundgroup);
+
+
 
         }
+        // GET api/values
+        [HttpGet]
+        public ActionResult<IEnumerable<refund>> Get()
+        {
+            return refunds;
+        }
 
-       
+
     }
 }

@@ -8,16 +8,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  
+<ion-list>
+<button ion-item *ngFor="let item of refunds">
+  <ion-row>
+    <ion-col col-3 text-center>ปีที่ {{item.year }}: คงค้าง </ion-col>
+    <ion-col col-3 text-center>{{item.money}} ดอกเบี้ย </ion-col>
+    <ion-col col-3 text-center>{{item.interest }} = {{item.money}}x 12 /100 </ion-col>
+    <ion-col col-3 text-center>ยอดที่ต้องชำระ {{item.pay }}</ion-col>
+    
+  </ion-row>
+</button>
+</ion-list>
 </ion-content>

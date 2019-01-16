@@ -5,7 +5,7 @@ namespace interestapi.Models
         public int Year { get; set; }
         public int Money { get; set; }
         public int Interest { get; set; }
-        public int Pay { get; set; }
+        public double Pay { get; set; }
         
 
     }

@@ -11,7 +11,7 @@ export class HomePage {
   private Money: number;
   private Year: number
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
+  constructor(public navCtrl: NavController, public http: HttpClient) {
 
   }
   Add() {
