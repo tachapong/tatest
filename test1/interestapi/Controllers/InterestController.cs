@@ -34,7 +34,7 @@ namespace interestapi.Controllers
             };
 
         }
-        // GET api/values
+        
         [HttpGet]
         public ActionResult<IEnumerable<refund>> Get()
         {

@@ -15,6 +15,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public http: HttpClient) {
 
   }
+
   Add() {
     this.navCtrl.push(ListPage)
     this.http.post("https://localhost:5001/api/Interest",
@@ -24,12 +25,6 @@ export class HomePage {
         Interest: this.Interest,
       }).subscribe(
         it => {
-          // SUCCESS: Do something
-          console.log('success')
-        },
-        error => {
-          // ERROR: Do something
-          console.log("fail")
         });
   }
 }

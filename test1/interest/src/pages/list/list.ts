@@ -11,15 +11,13 @@ export class ListPage {
   refunds: refund[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
-    
+
   }
 
- 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     this.http.get<refund[]>("https://localhost:5001/api/Interest").subscribe(
       it => {
         this.refunds = it;
-      
       });
-    }
+  }
 }
