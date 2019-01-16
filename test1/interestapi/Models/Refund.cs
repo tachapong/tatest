@@ -8,6 +8,5 @@ namespace interestapi.Models
         public int Interest { get; set; }
         public double Pay { get; set; }
         
-
     }
 }

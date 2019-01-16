@@ -28,13 +28,10 @@ namespace interestapi.Controllers
                     Money = refund.Money += summ,
                     Interests = refund.Interest,
                     Interest = ((refund.Money += summ)*refund.Interest)/100,
-                    Pay = refund.Money += (new logic().result( refund.Money += summ, refund.Interest)),
-
+                    Pay = refund.Money += (new logic().result(refund.Money += summ, refund.Interest)),
                 };
                 refunds.Add(refundgroup);
             };
-
-
 
         }
         // GET api/values
@@ -43,7 +40,5 @@ namespace interestapi.Controllers
         {
             return refunds;
         }
-
-
     }
 }

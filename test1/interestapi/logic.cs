@@ -5,7 +5,7 @@ namespace interestapi
         public int result(int number, int number2)
         {
             return  (number*number2)/100;
-
+            
         }
     }
 }
