@@ -14,8 +14,8 @@ export class HomePage {
   private Amount: number;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
-
   }
+  
   Add() {
     this.navCtrl.push(ListPage)
     this.http.post("https://localhost:5001/api/Product",
@@ -25,15 +25,9 @@ export class HomePage {
         Amount: this.Amount,
       }).subscribe(
         it => {
-          // SUCCESS: Do something
-          console.log('success')
-        },
-        error => {
-          // ERROR: Do something
-          console.log("fail")
         });
   }
-  Buy(){
+  Buy() {
     this.navCtrl.push(BuyPage)
   }
 

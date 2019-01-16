@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
@@ -10,28 +9,27 @@
 
 
 <ion-content padding>
-    <H4>สั่งซื้อของ</H4>
-    <ion-list>
-        <ion-item>
-          <ion-label fixed>ชื่อสินค้า</ion-label>
-          <ion-input type="text" [(ngModel)]="Product"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label fixed>ราคา</ion-label>
-          <ion-input type="number" [(ngModel)]="Price"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label fixed>จำนวน</ion-label>
-          <ion-input type="number" [(ngModel)]="Amount"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label fixed>ยอดรวม</ion-label>
-            <ion-input type="number" [(ngModel)]="Sum"></ion-input>
-          </ion-item>
-        <ion-item>
-          <button ion-button block (click)="Add()">ซื้อสินค้าเข้าตะกร้า</button>
-        </ion-item>
-       
-      </ion-list>
+  <H4>สั่งซื้อของ</H4>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>ชื่อสินค้า</ion-label>
+      <ion-input type="text" [(ngModel)]="Product"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>ราคา</ion-label>
+      <ion-input type="number" [(ngModel)]="Price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>จำนวน</ion-label>
+      <ion-input type="number" [(ngModel)]="Amount"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>ยอดรวม</ion-label>
+      <ion-input type="number" [(ngModel)]="Sum"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button block (click)="Add()">ซื้อสินค้าเข้าตะกร้า</button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

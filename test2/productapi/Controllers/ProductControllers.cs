@@ -12,7 +12,7 @@ namespace productapi.Controllers
     public class ProductController : ControllerBase
     {
         private static List<order> Orders = new List<order>();
-        private static int Counter = 1;
+        private static List<order> Order = new List<order>();
 
 
         [HttpPost]
@@ -27,12 +27,30 @@ namespace productapi.Controllers
             };
             Orders.Add(ordergroup);
         }
-        
-        // GET api/values
+
         [HttpGet]
         public ActionResult<IEnumerable<order>> Get()
         {
             return Orders;
+        }
+
+        [HttpPost("{xx}")]
+        public void Post2([FromBody] order orders)
+        {
+            var ordersgroup = new order
+            {
+                Product = orders.Product,
+                Price = orders.Price,
+                Amount = orders.Amount,
+                Sum = orders.Sum,
+            };
+            Order.Add(ordersgroup);
+        }
+
+        [HttpGet("{xx}")]
+        public ActionResult<IEnumerable<order>> Get2()
+        {
+            return Order;
         }
     }
 }
