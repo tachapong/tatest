@@ -30,13 +30,7 @@
     </button>
   </ion-list>
 
-  <ion-item>
-    <ion-label fixed>ส่วนลด</ion-label>
-    <ion-input type="number" [(ngModel)]="Amount"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label fixed>ยอดที่ต้องจ่าย</ion-label>
-    <ion-input type="number" [(ngModel)]="Sum"></ion-input>
-  </ion-item>
+  <ion-label text-center><h3>ส่วนลด {{change}} บาท</h3></ion-label>
+  <ion-label text-center><h2>ยอดที่ต้องจ่าย {{dis}} บาท</h2></ion-label>
 
 </ion-content>

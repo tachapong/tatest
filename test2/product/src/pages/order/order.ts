@@ -16,8 +16,12 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: 'order.html',
 })
 export class OrderPage {
-  orders: order[];
-
+  public orders: order[];
+  public Amount: number = 0;
+  public Price: number = 0;
+  public Sum: number = 0;
+  public dis: number = 0;
+  public change: number = 0;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
   }
 
@@ -25,6 +29,24 @@ export class OrderPage {
     this.http.get<order[]>("https://localhost:5001/api/Product/xx").subscribe(
       it => {
         this.orders = it;
+        this.order(this.orders);
+        this.or(this.orders);
       });
+  }
+  order(data: order[]) {
+    for (var i = 0; i < data.length; i++) {
+      this.Amount += data[i].amount;
+      this.Price += data[i].price;
+
+    }
+    this.dis = (this.Amount - (this.Amount / 4)) * this.Price
+
+  }
+  or(data1: order[]) {
+    for (var i = 0; i < data1.length; i++) {
+      this.Sum = data1[i].sum;
+    }
+    this.change = this.Sum-this.dis
+
   }
 }

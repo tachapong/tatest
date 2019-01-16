@@ -21,7 +21,7 @@ export class ListPage {
         this.orders = it;
       });
   }
-
+ 
   Buy() {
     this.navCtrl.push(BuyPage)
   }
