@@ -18,7 +18,7 @@ namespace interestapi.Controllers
         [HttpPost]
         public void Post([FromBody] refund refund)
         {
-            int summ = new logic().result(refund.Money);
+            int summ = new logic().result(refund.Money, refund.Interest);
                 summ = 0;
             for (int i = 1; i <= refund.Year; i++)
             {
@@ -26,8 +26,9 @@ namespace interestapi.Controllers
                 {
                     Year = Counter++,
                     Money = refund.Money += summ,
-                    Interest = sumi += new logic().result(refund.Money += summ),
-                    Pay = refund.Money += (new logic().result(refund.Money)),
+                    Interests = refund.Interest,
+                    Interest = ((refund.Money += summ)*refund.Interest)/100,
+                    Pay = refund.Money += (new logic().result( refund.Money += summ, refund.Interest)),
 
                 };
                 refunds.Add(refundgroup);

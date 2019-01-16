@@ -11,10 +11,10 @@
   <ion-list>
     <button ion-item *ngFor="let item of refunds">
       <ion-row>
-        <ion-col col-3 text-center>ปีที่ {{item.year }}: คงค้าง </ion-col>
-        <ion-col col-3 text-center>{{item.money}} ดอกเบี้ย </ion-col>
-        <ion-col col-3 text-center>{{item.interest }} = {{item.money}}x 12 /100 </ion-col>
-        <ion-col col-3 text-center>ยอดที่ต้องชำระ {{item.pay }}</ion-col>
+        <ion-col col-1 text-center>ปีที่ {{item.year }}: คงค้าง </ion-col>
+        <ion-col col-2 text-center>{{item.money}} ดอกเบี้ย </ion-col>
+        <ion-col col-3 text-center>{{item.interest }} = {{item.money}}x {{item.interests}} /100 </ion-col>
+        <ion-col col-2 text-center>ยอดที่ต้องชำระ {{item.pay}}</ion-col>
       </ion-row>
     </button>
   </ion-list>

@@ -9,6 +9,7 @@ import { ListPage } from '../list/list';
 })
 export class HomePage {
   private Money: number;
+  private Interest: number;
   private Year: number;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
@@ -20,6 +21,7 @@ export class HomePage {
       {
         Money: this.Money,
         Year: this.Year,
+        Interest: this.Interest,
       }).subscribe(
         it => {
           // SUCCESS: Do something
