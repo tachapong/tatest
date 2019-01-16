@@ -9,7 +9,7 @@ import { ListPage } from '../list/list';
 })
 export class HomePage {
   private Money: number;
-  private Year: number
+  private Year: number;
 
   constructor(public navCtrl: NavController, public http: HttpClient) {
 
