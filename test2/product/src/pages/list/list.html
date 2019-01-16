@@ -3,21 +3,31 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Product</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
+
+    <ion-list>
+       
+          <ion-row>
+            <ion-col col-3 text-center>ชื่อรายการสินค้า</ion-col>
+            <ion-col col-3 text-center>ราคาสินค้า</ion-col>
+            <ion-col col-3 text-center>จำนวนสินค้า</ion-col>
+            <ion-col col-3 text-center>ราคารวม</ion-col>
+          </ion-row>
+        
+      </ion-list>
+
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
+    <button ion-item *ngFor="let item of orders">
+      <ion-row>
+        <ion-col col-3 text-center>{{item.product }} </ion-col>
+        <ion-col col-3 text-center>{{item.price}} </ion-col>
+        <ion-col col-3 text-center>{{item.amount}} </ion-col>
+        <ion-col col-3 text-center> {{item.sum }} </ion-col>
+      </ion-row>
     </button>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>

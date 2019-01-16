@@ -17,7 +17,7 @@ export class HomePage {
   }
   Add() {
     this.navCtrl.push(ListPage)
-    this.http.post("https://localhost:5001/api/Interest",
+    this.http.post("https://localhost:5001/api/Product",
       {
         Product: this.Product,
         Price: this.Price,
