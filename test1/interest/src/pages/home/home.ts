@@ -9,17 +9,17 @@ import { ListPage } from '../list/list';
 })
 export class HomePage {
   private Money: number;
-  private year: number
+  private Year: number
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
 
   }
   Add() {
     this.navCtrl.push(ListPage)
-    this.http.post("https://localhost:5001/api/Order",
+    this.http.post("https://localhost:5001/api/Interest",
       {
         Money: this.Money,
-        year: this.year,
+        Year: this.Year,
       }).subscribe(
         it => {
           // SUCCESS: Do something
